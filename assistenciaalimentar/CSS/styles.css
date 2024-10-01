@@ -1,0 +1,272 @@
+body {
+    background: url("https://img.freepik.com/fotos-premium/fundo-abstrato-com-textura-de-papel-velho_196038-4095.jpg?w=826") no-repeat center center fixed;
+    background-size: cover;
+    /* overflow: hidden; */
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 50px;
+  }
+  
+  h1, h2, h3, h4 {
+
+    text-align: center;
+
+  }
+
+  .features h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .features li i {
+    color: #6772e5;
+    margin-right: 10px;
+  }
+  
+  .registration-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registration-form h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .registration-form .form-group label {
+    font-weight: bold;
+  }
+  
+  .registration-form .btn {
+    background-color: #1D4796;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .registration-form .btn:hover {
+    background-color: #536C9B;
+  }
+  
+  .registration-form p a {
+    color: #1D4796;
+    text-decoration: none;
+  }
+  
+  .registration-form p a:hover {
+    text-decoration: underline;
+  }
+
+  .registration-form {
+
+    background: rgb(241,241,241);
+    background: linear-gradient(0deg, rgba(241,241,241,1) 0%, rgba(246,246,246,1) 100%);
+
+  }
+
+  .form-select {
+
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  }
+
+  .registration-form {
+
+    max-height: 53em;
+    overflow-y: auto;
+    border-radius: 8px;
+
+  }
+
+ 
+.registration-form::-webkit-scrollbar {
+  width: 12px; /* largura da barra de rolagem */
+}
+
+.registration-form::-webkit-scrollbar-track {
+  background: #b8b8b8; /* cor do fundo da trilha da barra de rolagem */
+  border-radius: 0px 8px 8px 0px;
+}
+
+.registration-form::-webkit-scrollbar-thumb {
+  background-color: #1D4796; /* cor do preenchimento da barra de rolagem */
+  border-radius: 0px 8px 8px 0px;
+}
+
+  .container__cadastro {
+
+    display: none;
+
+  }
+
+  .container__gifs {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .container__botoes {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+  }
+
+  .container__botao__proximo  {
+
+    display: flex;
+    padding: 1em 0em;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .form-check {
+
+    text-align: center;
+    padding: .5em .2em 0 0;
+
+  }
+
+  .btn__compfamiliar {
+
+    width: 10em;
+
+  }
+
+  .form-label {
+
+    font-size: 13px !important;
+    font-weight: bold;
+    padding: 2em .2em 0 .2em;
+
+  }
+
+  /* .form-label {
+
+    font-weight: medium;
+    padding: 2em .2em 0 .4em;
+
+  } */
+
+  .aviso__edit {
+
+    font-size: 12px !important;
+
+  }
+  
+
+.container__footer {
+
+  text-align: center;
+
+}
+
+.segred {
+
+  font-weight: bold;
+  opacity: 0%;
+
+}
+
+.highlighted {
+  border-color: #1D4796 !important;
+  background-color: #cce5ff !important;
+}
+
+.secaoFamiliar {
+
+  margin-top: 1rem;
+
+}
+
+@media only screen and (max-width: 767px) {
+
+  body {
+
+    padding: 0px !important;
+
+  }
+
+  h2 {
+
+    font-size: 24px !important;
+
+  }
+
+  h4 {
+
+    font-size: 16px !important;
+
+  }
+
+  .form-label {
+
+    font-size: 14px !important;
+
+  }
+
+  .row {
+
+    flex-direction: column;
+
+  }
+
+  .col-md-6{
+
+    padding-right: 0 !important;
+
+  }
+
+  .registration-form {
+
+    margin-bottom: 1.5rem;
+
+  }
+
+  .registration-form::-webkit-scrollbar {
+    width: 4px; /* largura da barra de rolagem */
+  }
+
+  .container__gifs, .logoHeader {
+
+    display: none;
+
+  }
+
+  .secaoFamiliar {
+
+    margin-bottom: 1rem;
+
+  }
+
+
+
+}

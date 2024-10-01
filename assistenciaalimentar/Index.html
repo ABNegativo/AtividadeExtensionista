@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro social</title>
+  <link rel="icon" href="https://i.ibb.co/XZZw3H3/google-forms.png" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body 
+style="overflow-y: hidden;"
+>
+
+<div class="container__index">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="features">
+
+          <div class="container__gifs"> 
+            <!-- <img src="https://i.ibb.co/yqJRMd2/Group-306.png"> -->
+             <img class="logoHeader" src="https://i.ibb.co/M8SDXj9/LOGO-NOVA-SEM-FUNDO-M1-3.png">
+             <div id="gifPredio">
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script><dotlottie-player src="https://lottie.host/193c622b-3ed6-4c2a-b247-e6c7ed983bf9/TvUF6nEJAH.json" background="transparent" speed="1" style="width: 800px; height: 800px" direction="1" playMode="normal" autoplay></dotlottie-player>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="registration-form">
+
+        <section id="aluguelSocial">
+          <h2>Solicitação de Apoio: Assistência Alimentar</h2>
+          <h4>Departamento Social</h4>
+
+          <form id="familiaresForm" action="processa_formulario.php" method="post">
+            <div class="form-group">
+              <label class="form-label" >Nome</label>
+              <input type="text" name="Nome" class="form-control" placeholder="Seu nome" id="nome">
+            </div>
+
+            <div class="row g-3">
+              <div class="col">
+                <label class="form-label">CPF</label>
+                <input type="number" name="CPF" class="form-control" id="cpf" placeholder="000.000.000-00">
+              </div>
+              <div class="col">
+                <label class="form-label">RG</label>
+                <input type="number" name="RG" id="rg" class="form-control" placeholder="00.000.000-0">
+              </div>
+              <div class="col">
+                <label class="form-label">Data de nascimento</label>
+                <input type="text" name="dataNascimento" id="dataNascimento" class="form-control" placeholder="00/00/0000">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label" for="validationDefault04" class="form-label">Estado Civil</label>
+                <select class="form-select" name="estadocivil"id="estadoCivil">
+                  <option disabled selected hidden></option>
+                  <option id="selectSolteiro">Solteiro</option>
+                  <option id="selectCasado">Casado</option>
+                  <option id="selectDivorciado">Divorciado</option>
+                  <option id="selectUniaoEstavel">União Estável</option>
+                </select>
+              </div>
+              <div class="col">
+                  <label class="form-label" for="validationDefault04" class="form-label">Sexo</label>
+                <select class="form-select" name="sexo" id="sexo">,
+                  <option disabled selected hidden></option>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label">Titulo Eleitoral</label>
+                <input type="number" name="tituloEleitoral" class="form-control" placeholder="0000000000/00" id="tituloEleitoral">
+              </div>
+              <div class="col">
+                <label class="form-label">Data de emissão do Titulo</label>
+                <input type="text" name="dataTitulo" class="form-control" placeholder="00/00/0000" id="dataEmissaoTitulo">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label">Município de emissão do Titulo</label>
+                <input type="text" name="municipioEmissao" class="form-control" placeholder="MS" id="municipioEmissao">
+              </div>
+              <div class="col">
+                <label class="form-label">Tempo de residencia no município</label>
+                <select type="text" name="tempoResidencia" placeholder="12 meses" id="tempoResidencia" class="form-select">
+                  <option disabled selected hidden></option>
+                  <option>Menos de 3 anos</option>
+                  <option>Mais de 3 anos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"  id="cepApi">CEP</label>
+              <input type="text" name="CEP" class="form-control" placeholder="" id="cep">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"  id="enderecoApi">Endereço</label>
+              <input type="text" name="endereco" class="form-control" placeholder="Av. endereço" id="enderecoCompleto" readonly>
+            </div>
+
+            <section class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="number">Número</label>
+                <input type="number" name="numero" class="form-control" id="numero" placeholder="00">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" >Complemento</label>
+                <input type="text" name="complemento" placeholder="Ap. 8" class="form-control" id="complemento">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label"  id="bairroApi">Bairro</label>
+              <div class="input-group">
+                  <input type="text" name="bairro" placeholder="Centro" class="form-control" id="bairro" readonly>
+                </div>
+              </div>
+            </section>
+
+            <section class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label"  id="ufApi">UF</label>
+                <input type="text" name="uf" class="form-control" id="UF" placeholder="Mato Grosso do Sul" id="uf" readonly>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="Municipio" class="form-label">Municipio</label>
+                <input type="text" name="municipio" class="form-control" placeholder="Três Lagoas" id="municipio" readonly>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label" for="Celular">Celular</label>
+                <div class="input-group">
+                  <input type="number" name="celular" class="form-control" id="celular" placeholder="(00) 000000000">
+                </div>
+              </div>
+            </section>
+
+            <section class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label" for="ContatoRecado">Contato para recado</label>
+                <input type="number" name="contatoRecado" class="form-control" id="contatoRecado" placeholder="(00) 000000000">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="validationDefault04" class="form-label">Possui Cad Único?</label>
+                <select name="cadastroUnico" class="form-select" id="cadUnico">
+                  <option disabled selected hidden></option>
+                  <option>Sim</option>
+                  <option>Nao</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="validationDefault04" class="form-label">É Pessoa com deficiência?</label>
+                <select name="deficiencia" class="form-select" id="deficiencia">
+                  <option disabled selected hidden></option>
+                  <option>Sim</option>
+                  <option>Nao</option>
+                </select>
+              </div>
+            </section>
+
+          
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label">Profissão</label>
+                <input type="text" name="profissao" id="profissao" class="form-control" placeholder="">
+              </div>
+              <div class="col">
+                <label class="form-label" class="form-label">Renda mensal familiar</label>
+                <select name="renda" class="form-select" id="rendaFamiliar">
+                  <option disabled selected hidden></option>
+                  <option>Menos de 1 salário mínimo</option>
+                  <option>De 1 a 3 salários mínimos</option>
+                  <option>Mais de 3 salários mínimos</option>
+                </select>
+              </div>
+            </div>
+        
+            <div class="container__botao__proximo">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="upnumbersComposicaoFamiliar">
+                <label class="form-check-label" for="upnumbersComposicaoFamiliar">Confirmo que todos os dados fornecidos estão corretos e completos.</label>
+              </div>
+              <button type="button" class="btn btn-primary btn-block" id="btnProximo" disabled>Proximo</button>
+            </div>
+
+            </section>
+
+            
+
+            </section>
+
+            <section id="composicaoFamiliar" style="display: none;">
+
+              <h3>Composição Familiar</h3>
+          
+              <div class="form-group">
+                <label class="form-label" for="familiaresSelect" class="form-label">Quantas pessoas residem com o titular</label>
+                <select class="form-select" name="contFamilia" id="familiaresSelect" required>
+                  <option selected disabled value="">Quantidade de familiares</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+          
+              <div id="familiaresContainer">
+                
+                <!-- ---------------------Inicio do formulario familia------------------- -->
+
+                <!-- -------------Inicio do formulario familiar 1----------- -->
+                <section id="secaoFamiliarID1" style="display: none;">
+                  <h4>Familiar 1</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar1" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar1" id="dnascimentoFamiliar1" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar1" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect$1">Renda Mensal do Familiar 1</label>
+                      <select class="form-select" id="rendaSelect1" name="rendaSelect1" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04" class="form-label">Grau de parentesco do familiar 1</label>
+                      <select class="form-select" name="grauParentesco1"id="estadoCivil1" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho1">Filho(a)</option>
+                        <option id="selectEnteado1">Enteado(a)</option>
+                        <option id="selectMae1">Mãe</option>
+                        <option id="selectPai1">Pai</option>
+                        <option id="selectIrmao1">Irmão(ã)</option>
+                        <option id="selectSobrinho1">Sobrinho(a)</option>
+                        <option id="selectConjuge1">Cônjuge</option>
+                        <option id="selectOutros1">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 1</label>
+                      <input type="text" name="cpfFamiliar1" id="cpfFamiliar1" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 1----------- -->
+
+                <!-- -------------Inicio do formulario familiar 2----------- -->
+                <section id="secaoFamiliarID2" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 2</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar2" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar2" id="dnascimentoFamiliar2" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar2" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect2">Renda Mensal do Familiar 2</label>
+                      <select class="form-select" id="rendaSelect2" name="rendaSelect2" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 2</label>
+                      <select class="form-select" name="grauParentesco2" id="estadoCivil2" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho2">Filho(a)</option>
+                        <option id="selectEnteado2">Enteado(a)</option>
+                        <option id="selectMae2">Mãe</option>
+                        <option id="selectPai2">Pai</option>
+                        <option id="selectIrmao2">Irmão(ã)</option>
+                        <option id="selectSobrinho2">Sobrinho(a)</option>
+                        <option id="selectConjuge2">Cônjuge</option>
+                        <option id="selectOutros2">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 2</label>
+                      <input type="text" name="cpfFamiliar2" id="cpfFamiliar2" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 2----------- -->
+
+                <!-- -------------Inicio do formulario familiar 3----------- -->
+                <section id="secaoFamiliarID3" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 3</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar3" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar3" id="dnascimentoFamiliar3" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar3" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect3">Renda Mensal do Familiar 3</label>
+                      <select class="form-select" id="rendaSelect3" name="rendaSelect3" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 3</label>
+                      <select class="form-select" name="grauParentesco3" id="estadoCivil3" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho3">Filho(a)</option>
+                        <option id="selectEnteado3">Enteado(a)</option>
+                        <option id="selectMae3">Mãe</option>
+                        <option id="selectPai3">Pai</option>
+                        <option id="selectIrmao3">Irmão(ã)</option>
+                        <option id="selectSobrinho3">Sobrinho(a)</option>
+                        <option id="selectConjuge3">Cônjuge</option>
+                        <option id="selectOutros3">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 3</label>
+                      <input type="text" name="cpfFamiliar3" id="cpfFamiliar3" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 3----------- -->
+
+                <!-- -------------Inicio do formulario familiar 4----------- -->
+                <section id="secaoFamiliarID4" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 4</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar4" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar4" id="dnascimentoFamiliar4" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar4" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect4">Renda Mensal do Familiar 4</label>
+                      <select class="form-select" id="rendaSelect4" name="rendaSelect4" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 4</label>
+                      <select class="form-select" name="grauParentesco4" id="estadoCivil4" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho4">Filho(a)</option>
+                        <option id="selectEnteado4">Enteado(a)</option>
+                        <option id="selectMae4">Mãe</option>
+                        <option id="selectPai4">Pai</option>
+                        <option id="selectIrmao4">Irmão(ã)</option>
+                        <option id="selectSobrinho4">Sobrinho(a)</option>
+                        <option id="selectConjuge4">Cônjuge</option>
+                        <option id="selectOutros4">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 4</label>
+                      <input type="text" name="cpfFamiliar4" id="cpfFamiliar4" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 4----------- -->
+
+                <!-- -------------Inicio do formulario familiar 5----------- -->
+                <section id="secaoFamiliarID5" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 5</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar5" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar5" id="dnascimentoFamiliar5" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar5" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect5">Renda Mensal do Familiar 5</label>
+                      <select class="form-select" id="rendaSelect5" name="rendaSelect5" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 5</label>
+                      <select class="form-select" name="grauParentesco5" id="estadoCivil5" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho5">Filho(a)</option>
+                        <option id="selectEnteado5">Enteado(a)</option>
+                        <option id="selectMae5">Mãe</option>
+                        <option id="selectPai5">Pai</option>
+                        <option id="selectIrmao5">Irmão(ã)</option>
+                        <option id="selectSobrinho5">Sobrinho(a)</option>
+                        <option id="selectConjuge5">Cônjuge</option>
+                        <option id="selectOutros5">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 5</label>
+                      <input type="text" name="cpfFamiliar5" id="cpfFamiliar5" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 5----------- -->
+
+                <!-- -------------Inicio do formulario familiar 6----------- -->
+                <section id="secaoFamiliarID6" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 6</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar6" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar6" id="dnascimentoFamiliar6" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar6" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect6">Renda Mensal do Familiar 6</label>
+                      <select class="form-select" id="rendaSelect6" name="rendaSelect6" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 6</label>
+                      <select class="form-select" name="grauParentesco6" id="estadoCivil6" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho6">Filho(a)</option>
+                        <option id="selectEnteado6">Enteado(a)</option>
+                        <option id="selectMae6">Mãe</option>
+                        <option id="selectPai6">Pai</option>
+                        <option id="selectIrmao6">Irmão(ã)</option>
+                        <option id="selectSobrinho6">Sobrinho(a)</option>
+                        <option id="selectConjuge6">Cônjuge</option>
+                        <option id="selectOutros6">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 6</label>
+                      <input type="text" name="cpfFamiliar6" id="cpfFamiliar6" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 6----------- -->
+
+                <!-- -------------Inicio do formulario familiar 7----------- -->
+                <section id="secaoFamiliarID7" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 7</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar7" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar7" id="dnascimentoFamiliar7" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar7" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect7">Renda Mensal do Familiar 7</label>
+                      <select class="form-select" id="rendaSelect7" name="rendaSelect7" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 7</label>
+                      <select class="form-select" name="grauParentesco7" id="estadoCivil7" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho7">Filho(a)</option>
+                        <option id="selectEnteado7">Enteado(a)</option>
+                        <option id="selectMae7">Mãe</option>
+                        <option id="selectPai7">Pai</option>
+                        <option id="selectIrmao7">Irmão(ã)</option>
+                        <option id="selectSobrinho7">Sobrinho(a)</option>
+                        <option id="selectConjuge7">Cônjuge</option>
+                        <option id="selectOutros7">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 7</label>
+                      <input type="text" name="cpfFamiliar7" id="cpfFamiliar7" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 7----------- -->
+
+                <!-- -------------Inicio do formulario familiar 8----------- -->
+                <section id="secaoFamiliarID8" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 8</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar8" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar8" id="dnascimentoFamiliar8" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar8" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect8">Renda Mensal do Familiar 8</label>
+                      <select class="form-select" id="rendaSelect8" name="rendaSelect8" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 8</label>
+                      <select class="form-select" name="grauParentesco8" id="estadoCivil8" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho8">Filho(a)</option>
+                        <option id="selectEnteado8">Enteado(a)</option>
+                        <option id="selectMae8">Mãe</option>
+                        <option id="selectPai8">Pai</option>
+                        <option id="selectIrmao8">Irmão(ã)</option>
+                        <option id="selectSobrinho8">Sobrinho(a)</option>
+                        <option id="selectConjuge8">Cônjuge</option>
+                        <option id="selectOutros8">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 8</label>
+                      <input type="text" name="cpfFamiliar8" id="cpfFamiliar8" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 8----------- -->
+
+                <!-- -------------Inicio do formulario familiar 9----------- -->
+                <section id="secaoFamiliarID9" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 9</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar9" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar9" id="dnascimentoFamiliar9" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar9" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect9">Renda Mensal do Familiar 9</label>
+                      <select class="form-select" id="rendaSelect9" name="rendaSelect9" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 9</label>
+                      <select class="form-select" name="grauParentesco9" id="estadoCivil9" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho9">Filho(a)</option>
+                        <option id="selectEnteado9">Enteado(a)</option>
+                        <option id="selectMae9">Mãe</option>
+                        <option id="selectPai9">Pai</option>
+                        <option id="selectIrmao9">Irmão(ã)</option>
+                        <option id="selectSobrinho9">Sobrinho(a)</option>
+                        <option id="selectConjuge9">Cônjuge</option>
+                        <option id="selectOutros9">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 9</label>
+                      <input type="text" name="cpfFamiliar9" id="cpfFamiliar9" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 9----------- -->
+
+                <!-- -------------Inicio do formulario familiar 10----------- -->
+                <section id="secaoFamiliarID10" class="secaoFamiliar" style="display: none;">
+                  <h4>Familiar 10</h4>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Nome do familiar</label>
+                      <input type="text" class="form-control" name="nomeFamiliar10" placeholder="Nome do familiar" aria-label="Nome do familiar">
+                    </div>
+                    <div class="col">
+                      <label class="form-label">Data de nascimento</label>
+                      <input type="text" placeholder="00/00/0000" class="form-control" name="dnascimentoFamiliar10" id="dnascimentoFamiliar10" aria-label="Data de nascimento">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">Profissão</label>
+                      <input type="text" class="form-control" name="profissaoFamiliar10" aria-label="Profissão">
+                    </div>
+                    <div class="col">
+                      <label class="form-label" for="rendaSelect10">Renda Mensal do Familiar 10</label>
+                      <select class="form-select" id="rendaSelect10" name="rendaSelect10" >
+                        <option disabled selected hidden></option>
+                        <option>Menos de 1 salário mínimo</option>
+                        <option>De 1 a 3 salários mínimos</option>
+                        <option>Mais de 3 salários mínimos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="validationDefault04">Grau de parentesco do familiar 10</label>
+                      <select class="form-select" name="grauParentesco10" id="estadoCivil10" >
+                        <option disabled selected hidden></option>
+                        <option id="selectFilho10">Filho(a)</option>
+                        <option id="selectEnteado10">Enteado(a)</option>
+                        <option id="selectMae10">Mãe</option>
+                        <option id="selectPai10">Pai</option>
+                        <option id="selectIrmao10">Irmão(ã)</option>
+                        <option id="selectSobrinho10">Sobrinho(a)</option>
+                        <option id="selectConjuge10">Cônjuge</option>
+                        <option id="selectOutros10">Outros</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <label class="form-label">CPF do familiar 10</label>
+                      <input type="text" name="cpfFamiliar10" id="cpfFamiliar10" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                </section>
+                <!-- -------------Final do formulario familiar 10----------- -->
+                <!-- ---------------------final do formulario familia-------------------- -->
+                
+              <div>
+
+              <div class="row" id="membroDeficiente" style="display: none;">
+                <div class="col">
+                  <label class="form-label" class="form-label">Algum membro da composição familiar é pessoa com deficiência?</label>
+                  <select class="form-select" name="deficienciaFamiliar" id="familiarDefiencia" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" class="form-label">Mora em área de risco?</label>
+                  <select class="form-select" name="areaRisco" id="areaRisco" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                  <label class="aviso__edit">OBS.: A comprovação será realizada através de laudo da defesa civil</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" class="form-label">Possui cadastro no Departamento de Habitação para programa habitacional de caráter definitivo?</label>
+                  <select class="form-select" name="cadastroHabitacao" id="cadastroDefinitivo" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label"  class="form-label">Recebeu algum tipo de auxílio por outros programas nacionais, estaduais ou municipais?</label>
+                  <select class="form-select" name="unidadeHabitacao" id="outroPrograma" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" class="form-label">É mulher vítima de violência acompanhada por serviço especializado?</label>
+                  <select class="form-select" name="mulherViolencia" id="mulherVitima" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" class="form-label">É egresso de Acolhimento Institucional tendo completado 18 anos?</label>
+                  <select class="form-select" name="egressoAcolhimento" id="dezoitoAnos" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" class="form-label">É familia em estado de vulnerabilidade social residente em imóvel que está em processo de reintegração de posse promovida pelo município?</label>
+                  <select class="form-select" name="familiaVulnerabilidade" id="estadoVuneravel" required>
+                    <option disabled selected hidden></option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                  </select>
+                </div>
+              </div>
+
+              </div>
+        
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="upnumbers" required>
+                <label class="form-check-label" for="upnumbers">Confirmo que todos os dados fornecidos estão corretos e completos.</label>
+              </div>
+        
+              <div class="container__botoes">
+                <button type="button" class="btn btn-primary btn-block btn__compfamiliar" id="btnVoltar">Voltar</button>
+                <button type="submit" class="btn btn-primary btn-block btn__compfamiliar" id="btnEnviar">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </section>
+
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+
+  </div>
+</div>
+
+<!-- <footer class="container__footer"><img src="https://i.ibb.co/WFKMpKd/Group-41.png" alt="" style="width: 16em;"></footer> -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="JS/trocaFormularios.js"></script>
+<script src="JS/buscaCep.js"></script>
+<script src="JS/ligarInputs.js"></script>
+<script src="JS/multiplicarFamiliares.js"></script>
+<script src="JS/anlisarInputs.js"></script>
+</body>
+</html>
